@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodtastic/home/food_page_body.dart';
 import 'package:foodtastic/utils/colors.dart';
 import 'package:foodtastic/widgets/big_text.dart';
 import 'package:foodtastic/widgets/small_text.dart';
@@ -16,6 +17,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
     return Scaffold(
       body: Column(
         children: [
+          //Showing the header
           Container(
             //Scrolling Parameter
             child: Container(
@@ -52,6 +54,8 @@ class _MainFoodPageState extends State<MainFoodPage> {
               ),
             ),
           ),
+        //Showing the body
+        FoodPageBody(),
         ],
       ),
     );
