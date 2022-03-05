@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodtastic/home/food_page_body.dart';
+import 'package:foodtastic/pages/home/food_page_body.dart';
 import 'package:foodtastic/utils/colors.dart';
 import 'package:foodtastic/widgets/big_text.dart';
 import 'package:foodtastic/widgets/small_text.dart';
@@ -28,10 +28,16 @@ class _MainFoodPageState extends State<MainFoodPage> {
                 children: [
                   Column(
                     children: [
-                      BigText(text: 'Singapore',color: AppColors.mainColor,),
+                      BigText(
+                        text: 'Singapore',
+                        color: AppColors.mainColor,
+                      ),
                       Row(
                         children: [
-                          SmallText(text: 'Bukit Batok',color: Colors.black54,),
+                          SmallText(
+                            text: 'Bukit Batok',
+                            color: Colors.black54,
+                          ),
                           Icon(Icons.arrow_drop_down_outlined),
                         ],
                       ),
@@ -54,8 +60,11 @@ class _MainFoodPageState extends State<MainFoodPage> {
               ),
             ),
           ),
-        //Showing the body
-        FoodPageBody(),
+          //Showing the body
+          Expanded(
+              child: SingleChildScrollView(
+            child: FoodPageBody(),
+          )),
         ],
       ),
     );

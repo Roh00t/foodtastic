@@ -55,12 +55,119 @@ class _FoodPageBodyState extends State<FoodPageBody> {
           decorator: DotsDecorator(
             size: const Size.square(9.0),
             activeColor: AppColors.mainColor,
-        
             activeSize: const Size(18.0, 9.0),
             activeShape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5.0)),
           ),
         ),
+        //Popular text
+        SizedBox(
+          height: 30,
+        ),
+        Container(
+          margin: EdgeInsets.only(left: 30),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              BigText(text: 'Popular'),
+              SizedBox(
+                width: 10,
+              ),
+              //Put a Dot
+              Container(
+                margin: const EdgeInsets.only(bottom: 3),
+                child: BigText(
+                  text: '.',
+                  color: Colors.black26,
+                ),
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              //Small text
+              Container(
+                margin: const EdgeInsets.only(bottom: 2),
+                child: SmallText(text: 'Food pairing'),
+              ),
+            ],
+          ),
+        ),
+        ListView.builder(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return Container(
+                margin: EdgeInsets.only(left: 20, right: 20, bottom: 10),
+                child: Row(
+                  children: [
+                    //Image container
+                    Container(
+                      width: 120,
+                      height: 120,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white38,
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage('assets/image/food0.png'),
+                        ),
+                      ),
+                    ),
+                    //Text container
+                    Expanded(
+                      child: Container(
+                        height: 100,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(20),
+                            bottomRight: Radius.circular(20),
+                          ),
+                          color: Colors.white,
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 10,right: 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              BigText(text: 'Nutritious fruit meal in China'),
+                              SizedBox(height: 10,),
+                              SmallText(text: 'with chinese characteristics'),
+                              SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        IconAndTextWidget(
+                          icon: Icons.circle,
+                          text: 'Normal',
+                          iconColour: AppColors.iconColor1,
+                        ),
+                        IconAndTextWidget(
+                          icon: Icons.location_on,
+                          text: '1.7km',
+                          iconColour: AppColors.iconColor2,
+                        ),
+                        IconAndTextWidget(
+                          icon: Icons.access_time_rounded,
+                          text: '32min',
+                          iconColour: AppColors.iconColor1,
+                        ),
+                      ],
+                    ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        
       ],
     );
   }
