@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodtastic/pages/food/popular_food_detail.dart';
 import 'package:foodtastic/pages/home/main_food_page.dart';
 
 void main() {
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MainFoodPage(),
+      home:PopularFoodDetails(),
+      // home: MainFoodPage(),
     );
   }
 }

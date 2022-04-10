@@ -1,6 +1,7 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:foodtastic/utils/colors.dart';
+import 'package:foodtastic/widgets/app_column.dart';
 import 'package:foodtastic/widgets/big_text.dart';
 import 'package:foodtastic/widgets/icon_text_widget.dart';
 import 'package:foodtastic/widgets/small_text.dart';
@@ -234,63 +235,7 @@ class _FoodPageBodyState extends State<FoodPageBody> {
                   ]),
               child: Container(
                 padding: EdgeInsets.only(top: 15, left: 15, right: 15),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    BigText(text: 'Chinese Side'),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: [
-                        Wrap(
-                          children: List.generate(
-                              5,
-                              (index) => Icon(
-                                    Icons.star,
-                                    color: AppColors.mainColor,
-                                    size: 15,
-                                  )),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        SmallText(text: '4.5'),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        SmallText(text: '1287'),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        SmallText(text: 'comments'),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        IconAndTextWidget(
-                          icon: Icons.circle,
-                          text: 'Normal',
-                          iconColour: AppColors.iconColor1,
-                        ),
-                        IconAndTextWidget(
-                          icon: Icons.location_on,
-                          text: '1.7KM',
-                          iconColour: AppColors.iconColor2,
-                        ),
-                        IconAndTextWidget(
-                          icon: Icons.access_time_rounded,
-                          text: '32min',
-                          iconColour: AppColors.iconColor1,
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                child: AppColumn(),
               ),
             ),
           ),
